@@ -88,6 +88,7 @@ We supply a path to the `greeting.js` file relative to `cli.js`. Because that fi
 
 ![Module Exports](https://cl.ly/ngj3/Image%202017-11-13%20at%205.07.38%20PM.png)
 
+You can see the [full example](https://github.com/learn-co-curriculum/node-module-exports-readme) of [`module.exports`](https://github.com/learn-co-curriculum/node-module-exports-readme/blob/master/greeting.js) in and `require` in [`cli.js`](https://github.com/learn-co-curriculum/node-module-exports-readme/blob/master/cli.js)
 ## Advanced Exports and Requires
 
 There is more advanced usage of exports and requires but this simple single export and require is enough for now.
