@@ -6,6 +6,12 @@
 2. Use a `Promise` to create an asynchronous handler.
 3. Use `await` and `async` to handle asynchronous code.
 
+## Video Walkthrough
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/j8yHLlJpXwc?rel=0&modestbranding=1" frameborder="0" allowfullscreen></iframe><p><a href="https://www.youtube.com/watch?v=j8yHLlJpXwc">Asynchronous Javascript with Promises, then(), await, and async</a></p>
+
+I highly recommend watching that video and then going through the README and trying to follow the examples. This is a hard one, it's okay if you don't fully get the implementation, but just understand the problem and that it is solved through Promises.
+
 ## Asynchronous Javascript
 
 Javascript is an asynchronous language which means that code does not execute linearly and if one line of code has logic that might not resolve immediately, rather than wait for that resolution, the interpreter will continue to evaluate the rest of the code.
