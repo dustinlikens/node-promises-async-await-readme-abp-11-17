@@ -10,7 +10,7 @@
 
 Javascript is an asynchronous language which means that code does not execute linearly and if one line of code has logic that might not resolve immediately, rather than wait for that resolution, the interpreter will continue to evaluate the rest of the code.
 
-**File: synchronousExample.js**
+**File: [synchronousExample.js](https://github.com/learn-co-curriculum/node-promises-async-await-readme/blob/master/synchronousExample.js)**
 ```js
 function getData(){
   console.log("2. Returning instantly available data.")
@@ -53,7 +53,7 @@ setTimeout(function(){
 
 If we add a `setTimeout` to the `getData` function, everything goes wrong.
 
-**File: asynchronousExample.js**
+**File: [asynchronousExample.js](https://github.com/learn-co-curriculum/node-promises-async-await-readme/blob/master/asynchronousExample.js)**
 ```js
 function getData(){
   console.log("2. Getting data from internet, please wait.")
@@ -121,7 +121,7 @@ myFirstPromise.then(function(returnValueOfPromise){
 
 The `then` callback is cumbersome as our code ends up nesting functionality within multiple layers of callbacks. If we were to use a `Promise` and `then`, our initial script would look like:
 
-**File: synchronousPromise.js**
+**File: [synchronousPromise.js](https://github.com/learn-co-curriculum/node-promises-async-await-readme/blob/master/synchronousPromise.js)**
 ```js
 function getData(){
   console.log("2. Getting data from internet, please wait.")
@@ -165,7 +165,7 @@ If you want to force your code to run synchrnously and wait for a promise to res
 
 Here's the simple promise example re-written with `async` and `await`:
 
-**File: asyncAwaitPromiseExample.js**
+**File: [asyncAwaitPromiseExample.js](https://github.com/learn-co-curriculum/node-promises-async-await-readme/blob/master/asyncAwaitPromiseExample.js)**
 ```js
 let myFirstPromise = new Promise(function(resolve){
   setTimeout(function(){
@@ -178,3 +178,45 @@ let myFirstPromise = new Promise(function(resolve){
   console.log("Yay! " + returnValueOfPromise);
 })()
 ```
+
+First, any code that will use the `await` keyword must be wrapped within a function that is explicitly declared to be `async`. We accomplish this by declaring an expression with an anonymous `async` function that we immediately execute with the last two `()` - `(async function(){})()`.
+
+Then to wait for our promise to resolve and get the resolution as a return value from it, we just use the `await` keyword in-front of the promise.
+
+That looks way better than using the `then` callback style.
+
+Our full program would look like:
+
+**File: [awaitExample.js](https://github.com/learn-co-curriculum/node-promises-async-await-readme/blob/master/awaitExample.js)**
+```js
+function getData(){
+  console.log("2. Getting data from internet, please wait.")
+  return new Promise(function(resolve){
+    setTimeout(function(){
+      console.log("3. Returning data from internet.")
+      resolve([{name: "Avi"}, {name: "Grace"}])
+    }, 1000)
+  })
+}
+
+async function main(){
+  console.log("1. Starting Script")
+  const data = await getData()
+  console.log(`4. Data is currently ${JSON.stringify(data)}`)
+  console.log("5. Script Ended")
+}
+
+main()
+```
+
+That program will output:
+
+```
+node awaitExample.js 
+1. Starting Script
+2. Getting data from internet, please wait.
+3. Returning data from internet.
+4. Data is currently [{"name":"Avi"},{"name":"Grace"}]
+5. Script Ended
+```
+
