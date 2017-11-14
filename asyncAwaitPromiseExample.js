@@ -4,7 +4,9 @@ let myFirstPromise = new Promise(function(resolve){
   }, 1000);
 });
 
-(async function(){
+async function main(){
   let returnValueOfPromise = await myFirstPromise;
   console.log("Yay! " + returnValueOfPromise);
-})()
+}
+
+main()
