@@ -102,7 +102,7 @@ We instantiate an instance of `Promise`, passing the constructor our callback fu
 
 We can attach code to execute upon the resolution of a promise using the `then` function on an unresolved promise. Here's an example.
 
-**File: promiseExampleWithThen.js**
+**File: [promiseExampleWithThen.js](https://github.com/learn-co-curriculum/node-promises-async-await-readme/blob/master/promiseExampleWithThen.js)**
 ```js
 let myFirstPromise = new Promise(function(resolve){
   // We call resolve(...) when what we were doing asynchronously was successful
@@ -220,3 +220,4 @@ node awaitExample.js
 5. Script Ended
 ```
 
+That is the preferred way to handle asynchronous code after Node 8, with `await` being used infront of a Promise within a function marked as `async`.
