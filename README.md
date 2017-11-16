@@ -187,7 +187,7 @@ async function main(){
 main()
 ```
 
-First, any code that will use the `await` keyword must be wrapped within a function that is explicitly declared to be `async`. We accomplish this by declaring the `main` function with the syntax of `asnyc function main(){}`. The `async` keyword before a function declaration marks it as asynchronous, and within it we can use the `await` keyword to wait for a promise to resolve.
+First, any code that will use the `await` keyword must be wrapped within a function that is explicitly declared to be `async`. We accomplish this by declaring the `main` function with the syntax of `async function main(){}`. The `async` keyword before a function declaration marks it as asynchronous, and within it we can use the `await` keyword to wait for a promise to resolve.
 
 To wait for our promise to resolve and get the resolution as a return value from it, we just use the `await` keyword in-front of the promise.
 
